@@ -1,1 +1,5 @@
 ------------------PHASE 1-------------------------->
+----  uvicorn 
+its run the server and keep run again serve on any change 
+
+uvicorn main:app --reload
