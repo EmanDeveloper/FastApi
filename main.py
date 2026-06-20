@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI,HTTPException
 
 app=FastAPI()
 
@@ -13,3 +13,13 @@ def read_customer(customer_id: int):
 @app.get("/cutomer")
 def get_customer_detail(age:int,gender:str):
     return {"age":age,"gender":gender}
+
+
+@app.post("/checkvalue/{value}")
+def check_value(value: int):
+    try:
+        if value < 0:
+            raise HTTPException(status_code=400, detail="Value must be non-negative")
+        return {"value": value, "message": "Value is valid"}
+    except HTTPException as e:
+        raise HTTPException(status_code=e.status_code, detail=e.detail)

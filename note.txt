@@ -3,3 +3,10 @@
 its run the server and keep run again serve on any change 
 
 uvicorn main:app --reload
+
+-----Pydentic
+its use for define type like which type of data received
+
+-----HttpException
+its used for error handeling
+
