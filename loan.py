@@ -4,6 +4,7 @@ from pydantic import BaseModel
 app=FastAPI()
 
 class LoanApplication(BaseModel):
+    name:str
     age:int
     income:float
 
